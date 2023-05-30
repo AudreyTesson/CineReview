@@ -1,0 +1,53 @@
+<?php
+
+namespace App\Form;
+
+use App\Entity\User;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
+
+class UserType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options): void
+    {
+        $builder
+            ->add('email', EmailType::class, [
+                "label" => "Email pour se logger"
+            ])             
+            ->add('password', PasswordType::class, [
+                "label" => "le mot de passe",
+                'constraints' => [
+                    new NotBlank(),
+                    new Regex(
+                        "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/",
+                        "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
+                    ),
+                ],
+            ])
+            ->add('roles', ChoiceType::class, [
+                "multiple" => true,
+                "expanded" => true,
+                "choices" => [
+                    "ADMIN" => "ROLE_ADMIN",
+                    "MANAGER" => "ROLE_MANAGER",
+                    "USER" => "ROLE_USER",
+                    "RADIUM" => "ROLE_RADIUM"
+                ]
+            ]) 
+        ;
+    }
+
+    public function configureOptions(OptionsResolver $resolver): void
+    {
+        $resolver->setDefaults([
+            'data_class' => User::class,
+            "attr" => ["novalidate" => "novalidate"] 
+        ]);
+    }
+}

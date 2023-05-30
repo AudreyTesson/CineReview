@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Movie{% endblock %}
+
+{% block body %}
+
+{% include 'back/partials/_tableIdShow.html.twig' with { 'entity' : 'movie', 'id' : movie.id }  %}
+
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>Poster</th>
+				<td class="align-middle img-thumbnail">
+					<img src="{{ movie.poster }}"></img>
+				</td>
+			</tr>
+			<tr>
+				<th>Id</th>
+				<td>{{ movie.id }}</td>
+			</tr>
+			<tr>
+				<th>Title</th>
+				<td>{{ movie.title }}</td>
+			</tr>
+			<tr>
+				<th>Duration</th>
+				<td>{{ movie.duration }}</td>
+			</tr>
+			<tr>
+				<th>Rating</th>
+				<td>{{ movie.rating }}</td>
+			</tr>
+			<tr>
+				<th>Summary</th>
+				<td>{{ movie.summary }}</td>
+			</tr>
+			<tr>
+				<th>Synopsis</th>
+				<td>{{ movie.synopsis }}</td>
+			</tr>
+			<tr>
+				<th>ReleaseDate</th>
+				<td>{{ movie.releaseDate ? movie.releaseDate|date('Y-m-d') : '' }}</td>
+			</tr>
+			<tr>
+				<th>Country</th>
+				<td>{{ movie.country }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% set isDelete = (app.request.attributes.get("_route") ends with "_delete")%}
+
+{{ form_start(form) }}
+
+        {{ form_widget(form) }}
+        
+        {% if isDelete %}
+
+        {{ include('back/' ~ entity ~ '/_delete_form.html.twig') }}
+
+        {% endif %}
+
+        <a href="{{ path('app_back_' ~ entity ~ '_index') }}" class="btn btn-primary btn-lg mb-2" role="button" aria-disabled="true">Back</a>
+
+        <button class="btn btn-warning btn-lg mb-2" role="button" aria-disabled="true">{{ button_label|default('Save') }}</button>
+        
+{{ form_end(form) }}

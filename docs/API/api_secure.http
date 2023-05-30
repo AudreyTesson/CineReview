@@ -1,0 +1,16 @@
+POST http://localhost:8080/api/movies
+content-type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODQ4NDg0MzYsImV4cCI6MTY4NDkxMzIzNiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJ1c2VybmFtZSI6ImFkbWluQGFkbWluLmNvbSJ9.ik3BZjbEsIRGz0nOycAJqhtg3Lj756Q3ZiQXIHG3ZlnmuuXlzPfCRkO2CjzWcXRSqL76ZEnnpCzGtrk0KyyhvRTWS2XhUTNQCuJO6Thf-8K7EwMOGyxxdgRb8tkM4e5EFNtmG52OV8v4oqIVA_yAhRtRTyUoDVgpCL9jeJwjZEpojHa_vduBot_HYcM08icLDz5LXnEdU1eW_VCKzoDyJ2XFpXO-fvLLsdEjXgVSNuDtiqBSxSg1TgSjezBxnr7z0LMt0_o5dybASsedKgQXbERUl1LG_S1XgVe5rkJVu327sFnPwia9oByRBan_0IYmqayqSe0v0-4oxnP7trXvEQ
+
+{
+    "title" : "Radium Movie IV le retour du retour de la vengeance",
+    "duration" : 90,
+    "summary": "lalalalala",
+    "synopsis" : "lalalalalalalalalalalalalalalla",
+    "releaseDate" : "2023-05-23",
+    "type" : 35,
+    "rating" : 3,
+    "country" : "USA",
+    "poster" : "coming soon",
+    "genres" : [273]
+}

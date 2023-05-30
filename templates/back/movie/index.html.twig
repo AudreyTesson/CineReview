@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Movie index
+{% endblock %}
+
+{% block body %}
+
+{% include 'back/partials/_table.html.twig' with { 'entity' : 'movie' } %}
+
+{% include 'back/partials/tableHead/_' ~ partialsName ~ '.html.twig' %}
+
+{% include 'back/partials/tableBody/_' ~ partialsName ~ '.html.twig' with { 'entityList' : movies } %}
+
+</table>
+</div>
+
+</div>
+{% endblock %}
+

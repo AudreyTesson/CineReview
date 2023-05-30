@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Person
+{% endblock %}
+
+{% block body %}
+
+{% include 'back/partials/_tableIdShow.html.twig' with { 'entity' : 'person', 'id' : person.id }  %}
+
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>Id</th>
+				<td>{{ person.id }}</td>
+			</tr>
+			<tr>
+				<th>Firstname</th>
+				<td>{{ person.firstname }}</td>
+			</tr>
+			<tr>
+				<th>Lastname</th>
+				<td>{{ person.lastname }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+{% endblock %}

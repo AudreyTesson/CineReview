@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Season
+{% endblock %}
+
+{% block body %}
+
+{% include 'back/partials/_tableIdShow.html.twig' with { 'entity' : 'season', 'id' : season.id }  %}
+
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>Id</th>
+				<td>{{ season.id }}</td>
+			</tr>
+			<tr>
+				<th>Number</th>
+				<td>{{ season.number }}</td>
+			</tr>
+			<tr>
+				<th>NbEpisodes</th>
+				<td>{{ season.nbEpisodes }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+{% endblock %}

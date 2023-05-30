@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Casting Index
+{% endblock %}
+
+{% block body %}
+
+{% include 'back/partials/_table.html.twig' with { 'entity' : 'casting' } %}
+
+	<thead class="table-info">
+		<tr>
+			<th>Id</th>
+			<th>Role</th>
+			<th>CreditOrder</th>
+			<th>actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for casting in castings %}
+			<tr>
+				<td>{{ casting.id }}</td>
+				<td>{{ casting.role }}</td>
+				<td>{{ casting.creditOrder }}</td>
+				{% include 'back/partials/_tableButtons.html.twig' with { 'entity' : 'casting', 'id' : casting.id }  %}
+			</tr>
+		{% else %}
+			<tr>
+				<td colspan="4">no records found</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+	</table>
+
+	<a href="{{ path('app_back_casting_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<div class="my-5 py-5 text-center">
+		<img src="{{ asset('favicon.png') }}" height="100" alt="Logo O'flix" class="mb-3">
+		<h1 class="display-6 fw-bold">Films, séries TV et popcorn en illimité.</h1>
+		<div class="col-lg-6 mx-auto">
+			<p class="lead mb-4 text-muted">Où que vous soyez. Gratuit pour toujours.</p>
+		</div>
+	</div>
+
+	<div class="container-xl bg-light p-5 border-top">
+
+		<div class="row mb-2">
+
+			<div class="col-12 col-lg-3">
+
+				<ul class="d-flex flex-column flex-wrap list-unstyled justify-content-center">
+
+					{% for genre in genreList|sort((a, b) => a.name > b.name) %}
+					<a href="{{ path('app_front_genre_show', {'id': genre.id}) }}" class="btn btn-sm btn-outline-danger mx-1 mb-2"><li>{{ genre.name }}</li></a>
+					{% endfor %}
+
+				</ul>
+			
+			</div>
+
+			<div class="col-12 col-lg-9">
+
+				<h2 class="text-center text-muted fw-bold mb-4">Les films et séries <span class='badge bg-warning text-dark'>{{ genreById.name }}</span></h2>
+
+				{% for movie in movieGenre %}
+                
+					<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm bg-white position-relative">
+						<div class="col-4 movie__poster" style="background-image: url({{ movie.poster }})">
+							<img
+							src="{{ asset('images/poster-placeholder.png') }}" class="img-fluid">
+						</div>
+						<div class="col-8 p-4 d-flex flex-column position-static">
+							{% include "front/partials/_favorites.html.twig" with {'movieIDForPartial': movie.id} %}
+							<strong class="d-inline-block mb-2 text-primary">{{ movie.type.name }}</strong>
+							<h3 class="mb-1">{{ movie.title }}</h3>
+							<div class="mb-1 text-muted">{{ movie.duration }} min</div>
+							<p>
+								<small>{{ movie.summary }}</small>
+							</p>
+
+							{% include 'front/partials/_stars.html.twig' with {'ratingStars': movie.rating} %}
+
+							<a href="{{ path('app_front_movie_show', {'id': movie.id}) }}" class="fs-1 mt-3 text-danger align-self-start">
+								<i class="bi bi-arrow-right-square"></i>
+							</a>
+						</div>
+					
+					</div>
+				{% endfor %}
+
+				<div class="navigation d-flex justify-content-center">
+					{{ knp_pagination_render(movieGenre) }}
+				</div>
+
+			</div>
+
+		</div>
+
+	{% endblock %}

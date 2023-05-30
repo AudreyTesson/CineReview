@@ -1,0 +1,87 @@
+    <nav class="navbar navbar-expand-lg navbar-dark {% if isBackOffice %}bg-primary{% else %}bg-dark{% endif %}">
+        <div class="container-fluid">
+            <a href="{{ path('default') }}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo">
+                <img src="{{ asset('favicon.png') }}" height="24" alt="Logo O'flix">
+                <span class="header-logo__title">O'flix</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('default') }}">Accueil</a>
+                    </li>
+                    {% if isBackOffice %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_back_default') }}"></i>Back</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_back_movie_index') }}"></i>Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_back_casting_index') }}"></i> Castings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_back_person_index') }}"></i> Persons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_back_review_index') }}"></i> Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_back_season_index') }}"></i> Seasons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_back_user_index') }}"></i> Users</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_front_movie_search') }}"><i class="bi bi-film"></i> Films, séries TV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_front_favorites') }}"><i class="bi bi-bookmark"></i> Ma liste</a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+                {% if is_granted("IS_AUTHENTICATED_FULLY")%}
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                <span>{{ app.user.getUserIdentifier() }}</span>
+                                <i class="bi bi-person-square"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profil</a></li>
+                                <li><a class="dropdown-item" href="{{ path('app_back_default')}}">Backoffice</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                
+                                <li><a class="dropdown-item" href="{{ path('app_logout')}}">Déconnexion</a></li>
+                                    <ul>
+                                        {% for role in app.user.roles %}
+                                            <li>{{ role }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                {% endif %}
+
+                {% if is_granted("IS_AUTHENTICATED_FULLY")%}
+                    <a href="{{ path('app_logout') }}"><button type="button" class="btn btn-danger me-2">Déconnexion</button></a>
+                {% else %}
+                    <a href="{{ path('app_login') }}"><button type="button" class="btn btn-danger me-2">Connexion</button></a>
+                {% endif %}
+
+                <form class="d-flex" action="{{ path('app_front_movie_search') }}">
+                    <input class="form-control form-control-sm me-2" name="search" type="search" placeholder="Rechercher...">
+                    <button class="btn btn-outline-danger" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>

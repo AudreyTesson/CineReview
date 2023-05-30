@@ -1,0 +1,23 @@
+<tbody>
+	{% for movie in entityList %}
+		<tr>
+			<th class="align-middle" scope="row">{{ movie.id }}</th>
+			<td class="align-middle fw-bolder">{{ movie.title }}</td>
+			<td class="align-middle">{{ movie.duration }}</td>
+			<td class="align-middle">{{ movie.rating }}</td>
+			<td class="align-middle text-start fst-italic">{{ movie.summary }}</td>
+			<td class="align-middle text-start fst-italic">{{ movie.synopsis }}</td>
+			<td class="align-middle">{{ movie.releaseDate ? movie.releaseDate|date('Y-m-d') : '' }}</td>
+			<td class="align-middle">{{ movie.country }}</td>
+			<td class="align-middle img-thumbnail">
+				<img src="{{ movie.poster }}"></img>
+			</td>
+            {% include 'back/partials/_tableButtons.html.twig' with { 'entity' : 'movie', 'id' : movie.id }  %}
+		</tr>
+
+		{% else %}
+			<tr>
+				<td colspan="10">no records found</td>
+			</tr>
+	{% endfor %}
+</tbody>

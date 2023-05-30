@@ -1,0 +1,8 @@
+{
+    "editor.tokenColorCustomizations": {
+        "comments": "",
+        "textMateRules": []
+    },
+    "php.suggest.basic": false,
+    "php.validate.enable": false
+}

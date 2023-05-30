@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Casting
+{% endblock %}
+
+{% block body %}
+
+{% include 'back/partials/_tableIdShow.html.twig' with { 'entity' : 'casting', 'id' : casting.id }  %}
+
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>Id</th>
+				<td>{{ casting.id }}</td>
+			</tr>
+			<tr>
+				<th>Role</th>
+				<td>{{ casting.role }}</td>
+			</tr>
+			<tr>
+				<th>CreditOrder</th>
+				<td>{{ casting.creditOrder }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+{% endblock %}

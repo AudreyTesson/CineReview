@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Season index{% endblock %}
+
+{% block body %}
+
+{% include 'back/partials/_table.html.twig' with { 'entity' : 'season' } %}
+
+					<thead class="table-info">
+            <tr>
+                <th>Id</th>
+                <th>Number</th>
+                <th>NbEpisodes</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for season in seasons %}
+            <tr>
+                <td>{{ season.id }}</td>
+                <td>{{ season.number }}</td>
+                <td>{{ season.nbEpisodes }}</td>
+					{% include 'back/partials/_tableButtons.html.twig' with { 'entity' : 'season', 'id' : season.id }  %}
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

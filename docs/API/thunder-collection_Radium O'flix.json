@@ -1,0 +1,207 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Radium O'flix",
+    "dateExported": "2023-05-23T12:34:31.443Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "1293fa62-1673-4487-b0d1-f3d80872e93e",
+            "name": "Genres",
+            "containerId": "",
+            "created": "2023-05-22T11:23:21.065Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "e694b843-65b3-485f-9c53-0b6b1b0fb2bb",
+            "name": "Movies",
+            "containerId": "",
+            "created": "2023-05-22T12:36:28.636Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "4393a174-3637-4c37-8884-45477b4964d4",
+            "name": "Types",
+            "containerId": "",
+            "created": "2023-05-22T18:48:21.793Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "bdee8387-4b24-4bca-bc16-06886c1470e3",
+            "name": "Person",
+            "containerId": "",
+            "created": "2023-05-23T06:54:34.500Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "99c4df9c-405a-49eb-9db8-38966809e220",
+            "colId": "e9a3f03b-6709-4aa0-8a0e-1e1b9f40d52f",
+            "containerId": "1293fa62-1673-4487-b0d1-f3d80872e93e",
+            "name": "/api/genres",
+            "url": "http://localhost:8080/api/genres",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-05-22T11:24:03.902Z",
+            "modified": "2023-05-22T12:35:42.439Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9ca48c66-0bb4-4caf-8672-d2e2b42fec36",
+            "colId": "e9a3f03b-6709-4aa0-8a0e-1e1b9f40d52f",
+            "containerId": "e694b843-65b3-485f-9c53-0b6b1b0fb2bb",
+            "name": "/api/movies/1105",
+            "url": "http://localhost:8080/api/movies/1105",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-05-22T12:36:47.190Z",
+            "modified": "2023-05-22T12:36:47.190Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "15aab498-20b4-4f65-b024-47d39971fbae",
+            "colId": "e9a3f03b-6709-4aa0-8a0e-1e1b9f40d52f",
+            "containerId": "4393a174-3637-4c37-8884-45477b4964d4",
+            "name": "/api/types",
+            "url": "http://localhost:8080/api/types",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-05-22T18:48:36.937Z",
+            "modified": "2023-05-22T18:48:36.937Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4477c88b-2908-445f-af9e-178f6af7cd00",
+            "colId": "e9a3f03b-6709-4aa0-8a0e-1e1b9f40d52f",
+            "containerId": "bdee8387-4b24-4bca-bc16-06886c1470e3",
+            "name": "/api/persons/15001",
+            "url": "http://localhost:8080/api/persons/15001",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-05-23T06:54:45.824Z",
+            "modified": "2023-05-23T06:54:45.824Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ef9ca88a-4679-4ec6-ad2d-6fc132715441",
+            "colId": "e9a3f03b-6709-4aa0-8a0e-1e1b9f40d52f",
+            "containerId": "bdee8387-4b24-4bca-bc16-06886c1470e3",
+            "name": "/api/persons",
+            "url": "http://localhost:8080/api/persons",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-05-23T07:12:25.894Z",
+            "modified": "2023-05-23T07:12:25.894Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7c95d99e-843b-46f3-9e27-dc19ee587312",
+            "colId": "e9a3f03b-6709-4aa0-8a0e-1e1b9f40d52f",
+            "containerId": "e694b843-65b3-485f-9c53-0b6b1b0fb2bb",
+            "name": "/api/movies",
+            "url": "http://localhost:8080/api/movies",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-05-23T08:24:27.265Z",
+            "modified": "2023-05-23T08:24:27.265Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f9b3167b-f285-449a-9a3c-4acbf8567753",
+            "colId": "e9a3f03b-6709-4aa0-8a0e-1e1b9f40d52f",
+            "containerId": "1293fa62-1673-4487-b0d1-f3d80872e93e",
+            "name": "/api/genres/273",
+            "url": "http://localhost:8080/api/genres/273",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-05-23T08:32:26.775Z",
+            "modified": "2023-05-23T08:32:26.775Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0909d8f7-306b-49b3-b373-2565e5f3862c",
+            "colId": "e9a3f03b-6709-4aa0-8a0e-1e1b9f40d52f",
+            "containerId": "e694b843-65b3-485f-9c53-0b6b1b0fb2bb",
+            "name": "/api/movies",
+            "url": "http://localhost:8080/api/movies",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-05-23T11:27:13.642Z",
+            "modified": "2023-05-23T12:28:45.183Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\" : \"Radium Movie IV le retour du retour de la vengeance\",\n  \"duration\" : 90,\n  \"summary\": \"lalalalala\",\n  \"synopsis\" : \"lalalalalalalalalalalalalalalla\",\n  \"releaseDate\" : \"2023-05-23\",\n  \"type\" : 35,\n  \"rating\" : 3,\n  \"country\" : \"USA\",\n  \"poster\" : \"coming soon\",\n  \"genres\" : 273\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e12d5465-d6e6-40ab-b53b-17dbf76d13f2",
+            "colId": "e9a3f03b-6709-4aa0-8a0e-1e1b9f40d52f",
+            "containerId": "1293fa62-1673-4487-b0d1-f3d80872e93e",
+            "name": "/api/genres",
+            "url": "http://localhost:8080/api/genres",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-05-23T09:43:37.183Z",
+            "modified": "2023-05-23T10:04:34.618Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"RadiumV2\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6750e9fc-91ec-4b54-b64a-48bc78c60554",
+            "colId": "e9a3f03b-6709-4aa0-8a0e-1e1b9f40d52f",
+            "containerId": "1293fa62-1673-4487-b0d1-f3d80872e93e",
+            "name": "/api/genres/293",
+            "url": "http://localhost:8080/api/genres/293",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2023-05-23T10:07:38.028Z",
+            "modified": "2023-05-23T10:07:38.028Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"RadiumV3\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c98d7657-6e7f-4db0-86c8-355dfafc29ac",
+            "colId": "e9a3f03b-6709-4aa0-8a0e-1e1b9f40d52f",
+            "containerId": "1293fa62-1673-4487-b0d1-f3d80872e93e",
+            "name": "/api/genres/294",
+            "url": "http://localhost:8080/api/genres/294",
+            "method": "DELETE",
+            "sortNum": 100000,
+            "created": "2023-05-23T10:18:15.057Z",
+            "modified": "2023-05-23T10:18:15.057Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
